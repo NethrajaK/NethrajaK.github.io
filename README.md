@@ -6,6 +6,7 @@ This project is a simple one-page professional portfolio built with plain HTML, 
 
 ```text
 Webpage/
+├── .gitignore
 ├── index.html
 ├── styles.css
 ├── script.js
@@ -27,6 +28,20 @@ Then open:
 
 ```text
 http://localhost:8000
+```
+
+## Live Website
+
+This site is published at:
+
+```text
+https://nethrajak.github.io/
+```
+
+The GitHub repository is:
+
+```text
+https://github.com/NethrajaK/NethrajaK.github.io
 ```
 
 ## Replacing the CV Later
@@ -61,18 +76,53 @@ To replace it:
 
 ## Deploying with GitHub Pages
 
-1. Create a GitHub repository and upload this folder.
-2. Commit and push the files to the default branch, usually `main`.
-3. In the repository settings, open `Pages`.
-4. Set the source to deploy from the default branch root.
-5. Save the setting and wait for GitHub Pages to publish the site.
-6. Use the published webpage URL in the QR code on the business card.
+This project is already set up for GitHub Pages.
 
-The URL will typically look like:
+Current settings:
 
 ```text
-https://your-username.github.io/repository-name/
+Repository: NethrajaK/NethrajaK.github.io
+Branch: main
+Folder: / (root)
 ```
+
+If GitHub Pages ever needs to be checked again:
+
+1. Open the repository settings.
+2. Go to `Pages`.
+3. Make sure the source is `Deploy from a branch`.
+4. Make sure the branch is `main` and the folder is `/ (root)`.
+
+## Updating the Website Later
+
+For normal content or design changes:
+
+1. Edit the files in this folder.
+2. Preview locally with `python3 -m http.server 8000`.
+3. Commit the changes:
+
+```bash
+git add index.html styles.css script.js README.md assets
+git commit -m "Update website content"
+```
+
+4. Push the changes:
+
+```bash
+git push origin main
+```
+
+5. Wait a minute or two for GitHub Pages to refresh the live site.
+
+## Why `.gitignore` Is Included
+
+The `.gitignore` file keeps local-only source files out of the published repo:
+
+- `CV Nethraja.pdf`
+- `headshot.JPG`
+- `.DS_Store`
+
+The website uses the copied files inside `assets/`, so these original files do not need to be pushed to GitHub.
 
 ## Why the QR Code Should Point to the Webpage Instead of the CV
 
