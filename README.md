@@ -1,6 +1,6 @@
 # Nethraja Kandula Personal Webpage
 
-This project is a simple one-page professional portfolio built with plain HTML, CSS, and vanilla JavaScript. It is designed to work well from a QR code on a conference business card and to provide a stable webpage URL for recruiters and collaborators.
+This project is a one-page professional portfolio built with plain HTML, CSS, and vanilla JavaScript. It is designed for recruiters, collaborators, and conference contacts who scan the printed QR code and land on a polished overview page.
 
 ## Project Structure
 
@@ -10,11 +10,72 @@ Webpage/
 ├── index.html
 ├── styles.css
 ├── script.js
+├── index.html.bak
+├── styles.css.bak
+├── script.js.bak
 ├── assets/
+│   ├── headshot.JPG
 │   ├── nethraja-kandula-cv.pdf
-│   └── headshot.JPG
+│   ├── documents/
+│   │   ├── nethraja-kandula-cv.pdf
+│   │   └── nethraja-kandula-resume.pdf
+│   ├── presentations/
+│   │   ├── fafp-2023.jpeg
+│   │   ├── ift-2024-1.jpeg
+│   │   ├── ift-2024-2.jpeg
+│   │   └── iafp-2025.jpeg
+│   └── media/
+│       ├── three-minute-thesis-2026.png
+│       ├── grad-impact-profile.png
+│       ├── seafood-mislabeling.png
+│       ├── nsf-icorps.png
+│       └── shrimp-research.png
 └── README.md
 ```
+
+## Page Sections
+
+The webpage currently includes:
+
+1. About
+2. Expertise
+3. Presentations
+4. Featured Stories & Media
+5. CV & Résumé
+6. Contact
+
+## Presentation Images
+
+Presentation photographs are stored in:
+
+```text
+assets/presentations/
+```
+
+Current files:
+
+- `fafp-2023.jpeg`
+- `ift-2024-1.jpeg`
+- `ift-2024-2.jpeg`
+- `iafp-2025.jpeg`
+
+## Media Thumbnails
+
+Featured Stories & Media thumbnails are stored in:
+
+```text
+assets/media/
+```
+
+Current files:
+
+- `three-minute-thesis-2026.png`
+- `grad-impact-profile.png`
+- `seafood-mislabeling.png`
+- `nsf-icorps.png`
+- `shrimp-research.png`
+
+These are local image files used directly in the cards. The cards link to the original external articles, profiles, videos, and galleries in new tabs.
 
 ## Preview Locally
 
@@ -32,53 +93,21 @@ http://localhost:8000
 
 ## Live Website
 
-This site is published at:
+Published site:
 
 ```text
 https://nethrajak.github.io/
 ```
 
-The GitHub repository is:
+GitHub repository:
 
 ```text
 https://github.com/NethrajaK/NethrajaK.github.io
 ```
 
-## Replacing the CV Later
+## GitHub Pages Settings
 
-Keep the public filename exactly the same:
-
-```text
-assets/nethraja-kandula-cv.pdf
-```
-
-To update the CV:
-
-1. Export the new CV as a PDF.
-2. Replace the file at `assets/nethraja-kandula-cv.pdf`.
-3. Do not change the filename unless you also update the links in `index.html`.
-
-Using the same filename keeps the webpage buttons, embedded CV section, and QR-linked site working without changing the page address.
-
-## Replacing the Headshot
-
-The webpage currently uses:
-
-```text
-assets/headshot.JPG
-```
-
-To replace it:
-
-1. Prepare the new image.
-2. Save it with the same filename and extension, or update the image path in `index.html`.
-3. Replace the file inside the `assets/` folder.
-
-## Deploying with GitHub Pages
-
-This project is already set up for GitHub Pages.
-
-Current settings:
+This project is already configured for GitHub Pages.
 
 ```text
 Repository: NethrajaK/NethrajaK.github.io
@@ -86,12 +115,89 @@ Branch: main
 Folder: / (root)
 ```
 
-If GitHub Pages ever needs to be checked again:
+To verify the deployment settings later:
 
-1. Open the repository settings.
-2. Go to `Pages`.
-3. Make sure the source is `Deploy from a branch`.
-4. Make sure the branch is `main` and the folder is `/ (root)`.
+1. Open the repository on GitHub.
+2. Go to `Settings`.
+3. Open `Pages`.
+4. Confirm the source is `Deploy from a branch`.
+5. Confirm the branch is `main` and the folder is `/ (root)`.
+
+## Replacing the CV
+
+The live CV link points to:
+
+```text
+assets/documents/nethraja-kandula-cv.pdf
+```
+
+To replace it:
+
+1. Export the updated CV as a PDF.
+2. Replace `assets/documents/nethraja-kandula-cv.pdf`.
+3. Keep the same filename.
+
+Keeping the same filename allows future updates without editing the HTML.
+
+## Replacing the Résumé
+
+The live résumé link points to:
+
+```text
+assets/documents/nethraja-kandula-resume.pdf
+```
+
+To replace it:
+
+1. Export the updated résumé as a PDF.
+2. Replace `assets/documents/nethraja-kandula-resume.pdf`.
+3. Keep the same filename.
+
+Keeping the same filename allows future updates without editing the HTML.
+
+## Replacing a Media Thumbnail
+
+To replace a Featured Stories & Media thumbnail:
+
+1. Prepare the new image.
+2. Save it in `assets/media/`.
+3. Reuse the same filename when possible.
+4. If the filename changes, update the corresponding `src` in `index.html`.
+
+Examples:
+
+- `assets/media/seafood-mislabeling.png`
+- `assets/media/shrimp-research.png`
+
+## Adding Another Presentation
+
+To add another presentation card:
+
+1. Copy the new image into `assets/presentations/`.
+2. Add a new card inside the `#presentations` section in `index.html`.
+3. Follow the same structure as the existing presentation cards.
+4. Add descriptive alt text.
+5. Keep the order intentional, usually chronological.
+
+## Adding Another Story, Profile, Video, or Media Article
+
+To add another Featured Stories & Media card:
+
+1. Save a local thumbnail into `assets/media/`.
+2. Add a new card inside the `#featured-stories` section in `index.html`.
+3. Link the full card to the original external URL.
+4. Use:
+
+```html
+target="_blank" rel="noopener noreferrer"
+```
+
+5. Add:
+
+- a source label
+- a concise title
+- a short description
+- a short action label such as `Read article` or `Watch video`
 
 ## Updating the Website Later
 
@@ -116,20 +222,26 @@ git push origin main
 
 ## Why `.gitignore` Is Included
 
-The `.gitignore` file keeps local-only source files out of the published repo:
+The `.gitignore` file keeps local-only source files out of the published repository:
 
 - `CV Nethraja.pdf`
 - `headshot.JPG`
 - `.DS_Store`
 
-The website uses the copied files inside `assets/`, so these original files do not need to be pushed to GitHub.
+The webpage uses copied web-ready files inside `assets/`, so the original source files stay in the project without being published.
 
-## Why the QR Code Should Point to the Webpage Instead of the CV
+## QR Code Stability
 
-Pointing the QR code to the webpage is better than linking directly to the PDF because:
+The main webpage URL and printed QR code remain unchanged when:
 
-- The webpage presents a stronger professional first impression.
-- Recruiters can immediately see contact details, expertise, and profile links.
-- The CV can still be viewed or downloaded from the page.
-- The page can be updated over time without changing the QR code destination.
-- The webpage works as a central profile, while the CV remains one supporting document.
+- the CV is updated
+- the résumé is updated
+- presentation images are replaced
+- media thumbnails are replaced
+- page content is edited
+
+As long as the site continues to be published at the same URL, the QR code does not need to be reprinted:
+
+```text
+https://nethrajak.github.io/
+```
